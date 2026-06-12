@@ -6,7 +6,7 @@
 <title>n!l</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -18,7 +18,7 @@
 }
 html { scroll-behavior: smooth; }
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
   background: var(--cream);
   color: var(--dark);
   font-size: 15px;
@@ -26,8 +26,6 @@ body {
   font-weight: 300;
   overflow-x: hidden;
 }
-
-/* ── SPLASH ── */
 #splash {
   position: fixed; inset: 0; z-index: 1000;
   background: var(--dark);
@@ -37,8 +35,6 @@ body {
 }
 #splash.exit { transform: translateY(-100%); }
 #splash-logo { width: min(260px, 52vw); opacity: 0; transform: scale(0.88); filter: invert(1); }
-
-/* ── NAV ── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
   height: var(--nav-h);
@@ -55,7 +51,7 @@ nav.visible { opacity: 1; transform: translateY(0); }
 .nav-links { display: flex; gap: 36px; list-style: none; }
 .nav-links button {
   background: none; border: none; cursor: pointer;
-  font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 0.16em;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif; font-size: 11px; letter-spacing: 0.16em;
   text-transform: uppercase; font-weight: 300; color: var(--mid);
   transition: color 0.25s; padding: 0;
 }
@@ -80,66 +76,42 @@ nav.visible { opacity: 1; transform: translateY(0); }
 .nav-mobile-menu ul { list-style: none; }
 .nav-mobile-menu button {
   display: block; width: 100%; background: none; border: none; cursor: pointer;
-  font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.2em;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif; font-size: 13px; letter-spacing: 0.2em;
   text-transform: uppercase; font-weight: 300; color: var(--mid);
   text-align: left; padding: 14px 28px; transition: color 0.2s;
 }
 .nav-mobile-menu button.active, .nav-mobile-menu button:hover { color: var(--dark); }
-
-/* ── PAGES ── */
 .page { display: none; }
 .page.active { display: block; animation: pageFade 0.4s ease forwards; }
 @keyframes pageFade { from { opacity: 0; } to { opacity: 1; } }
-
-/* ═══════════════════════════════════════
-   SCROLL FADE-IN
-   ═══════════════════════════════════════ */
 .fade-section {
-  opacity: 0;
-  transform: translateY(28px);
+  opacity: 0; transform: translateY(28px);
   transition: opacity 0.85s ease, transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.fade-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ═══════════════════════════════════════
-   WORKS
-   ═══════════════════════════════════════ */
+.fade-section.visible { opacity: 1; transform: translateY(0); }
 #page-works { padding-top: var(--nav-h); }
 .works-list { padding-top: 40px; }
-
 .project-row {
-  display: grid;
-  grid-template-columns: 28% 44% 28%;
-  align-items: end;
-  margin-bottom: 88px;
-  cursor: pointer;
+  display: grid; grid-template-columns: 30% 42% 28%;
+  align-items: end; margin-bottom: 88px; cursor: pointer;
 }
 .card-label {
-  padding: 0 32px 6px 52px; text-align: right;
-  display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-end;
+  padding: 0 28px 6px 52px; text-align: right;
+  display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-end; overflow: visible;
 }
-.card-num { display: block; font-size: 10px; letter-spacing: 0.25em; color: var(--mid); margin-bottom: 8px; }
+.card-num { display: block; font-size: 10px; letter-spacing: 0.25em; color: var(--mid); margin-bottom: 8px; white-space: nowrap; }
 .card-title-label {
-  display: block; font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(13px, 1.2vw, 17px); font-weight: 300;
-  letter-spacing: 0.04em; color: var(--dark); line-height: 1.5; transition: color 0.3s;
+  display: block; font-family: 'Zen Kaku Gothic Antique', sans-serif; font-size: 15px; font-weight: 300;
+  letter-spacing: 0.04em; color: var(--dark); line-height: 1.5; transition: color 0.3s; white-space: nowrap;
 }
 .card-concept-tag {
-  display: block; margin-top: 10px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(11px, 0.9vw, 13px); font-style: italic;
-  font-weight: 300; letter-spacing: 0.02em; line-height: 1.6; color: var(--mid);
-  opacity: 0; transform: translateY(5px);
-  transition: opacity 0.45s ease, transform 0.45s ease;
-  max-width: 200px; text-align: right;
+  display: block; margin-top: 10px; font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  font-size: clamp(11px, 0.9vw, 13px); font-style: italic; font-weight: 300; letter-spacing: 0.02em; line-height: 1.6;
+  color: #3a3936; opacity: 0; transform: translateY(5px);
+  transition: opacity 0.45s ease, transform 0.45s ease; max-width: 220px; text-align: right;
 }
 .project-row:hover .card-concept-tag { opacity: 1; transform: translateY(0); }
-.card-img-wrap {
-  position: relative; width: 100%; height: 62vh; overflow: hidden; background: var(--light);
-}
+.card-img-wrap { position: relative; width: 100%; height: 62vh; overflow: hidden; background: var(--light); }
 .card-img-wrap img {
   position: absolute; inset: 0; width: 100%; height: 100%;
   object-fit: cover; opacity: 0;
@@ -147,138 +119,79 @@ nav.visible { opacity: 1; transform: translateY(0); }
 }
 .card-img-wrap img.loaded { opacity: 1; }
 .project-row:hover .card-img-wrap img { transform: scale(1.06); }
-.card-right { padding: 0 52px 6px 32px; display: flex; align-items: flex-end; }
-.card-arrow {
-  font-size: 12px; color: var(--mid);
-  opacity: 0; transform: translateX(-6px);
-  transition: opacity 0.4s, transform 0.4s;
-}
+.card-right { padding: 0 52px 6px 28px; display: flex; align-items: flex-end; }
+.card-arrow { font-size: 12px; color: var(--mid); opacity: 0; transform: translateX(-6px); transition: opacity 0.4s, transform 0.4s; }
 .project-row:hover .card-arrow { opacity: 1; transform: translateX(0); }
-.is-clone { margin-bottom: 88px; }
 .works-footer {
   padding: 32px 52px; border-top: 1px solid rgba(26,25,22,0.1); margin-top: 88px;
   display: flex; justify-content: space-between; align-items: center;
   font-size: 11px; letter-spacing: 0.12em; color: var(--mid);
 }
 .works-footer img { height: 18px; width: auto; mix-blend-mode: multiply; }
-
-/* ═══════════════════════════════════════
-   PROJECT DETAIL
-   ═══════════════════════════════════════ */
 .project-wrap {
-  display: grid;
-  grid-template-columns: 38% 62%;
-  min-height: calc(100vh - var(--nav-h));
-  padding-top: var(--nav-h);
+  display: grid; grid-template-columns: 38% 62%;
+  min-height: calc(100vh - var(--nav-h)); padding-top: var(--nav-h);
 }
 .project-left {
-  position: sticky;
-  top: var(--nav-h);
-  height: calc(100vh - var(--nav-h));
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding: 52px 44px 52px 52px;
-  border-right: 1px solid rgba(26,25,22,0.08);
-  display: flex;
-  flex-direction: column;
-  scrollbar-width: thin;
-  scrollbar-color: var(--light) transparent;
+  position: sticky; top: var(--nav-h); height: calc(100vh - var(--nav-h));
+  overflow-y: auto; overflow-x: hidden; padding: 52px 44px 52px 52px;
+  border-right: 1px solid rgba(26,25,22,0.08); display: flex; flex-direction: column;
+  scrollbar-width: thin; scrollbar-color: var(--light) transparent;
 }
 .project-left::-webkit-scrollbar { width: 3px; }
 .project-left::-webkit-scrollbar-track { background: transparent; }
 .project-left::-webkit-scrollbar-thumb { background: var(--light); border-radius: 2px; }
-
 .back-btn {
   display: inline-flex; align-items: center; gap: 8px;
   background: none; border: none; cursor: pointer;
-  font-family: 'Inter', sans-serif; font-size: 11px;
-  letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid);
-  margin-bottom: 32px; padding: 0; transition: color 0.25s; align-self: flex-start;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif; font-size: 11px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--mid); margin-bottom: 32px; padding: 0;
+  transition: color 0.25s; align-self: flex-start;
 }
-.back-btn::before { content: '←'; font-size: 13px; }
+.back-btn::before { content: '\2190'; font-size: 13px; }
 .back-btn:hover { color: var(--dark); }
 .project-detail-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(17px, 1.8vw, 22px); font-weight: 300;
-  letter-spacing: 0.05em; line-height: 1.4; color: var(--mid); margin-bottom: 32px;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif; font-size: clamp(17px, 1.8vw, 22px);
+  font-weight: 300; letter-spacing: 0.05em; line-height: 1.4; color: var(--mid); margin-bottom: 32px;
 }
 .concept-tagline {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(19px, 2vw, 26px); font-style: italic;
-  font-weight: 300; letter-spacing: 0.03em; line-height: 1.55;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif; font-size: clamp(19px, 2vw, 26px);
+  font-style: italic; font-weight: 300; letter-spacing: 0.03em; line-height: 1.55;
   color: var(--dark); margin-bottom: 28px;
 }
-.concept-body p {
-  font-size: 12.5px; line-height: 2.2; color: #4a4845;
-  font-weight: 300; margin-bottom: 18px;
-}
+.concept-body p { font-size: 12.5px; line-height: 2.2; color: #4a4845; font-weight: 300; margin-bottom: 18px; }
 .concept-body p:last-child { margin-bottom: 0; }
-.concept-note {
-  margin-top: 28px; font-size: 10px; letter-spacing: 0.1em;
-  color: rgba(107,104,96,0.5); font-style: italic;
-}
 .project-right { }
 .photo-stack { }
-.stack-photo {
-  display: block; width: 100%; height: auto;
-  opacity: 0; transition: opacity 0.7s ease;
-  cursor: pointer; margin-bottom: 3px;
-}
+.stack-photo { display: block; width: 100%; height: auto; cursor: pointer; margin-bottom: 3px; }
 .stack-photo:last-child { margin-bottom: 0; }
-.stack-photo.loaded { opacity: 1; }
-
-/* ═══════════════════════════════════════
-   ABOUT
-   ═══════════════════════════════════════ */
 #page-about { min-height: 100vh; padding-top: var(--nav-h); }
-.about-inner {
-  padding: 64px 52px 120px;
-  max-width: 820px;
-  margin: 0 auto;
-  text-align: center;
-}
+.about-inner { padding: 64px 52px 120px; max-width: 820px; margin: 0 auto; text-align: center; }
 .about-logo-wrap { margin-bottom: 20px; }
 .about-logo-wrap img { height: clamp(90px,16vw,200px); width: auto; mix-blend-mode: multiply; display: inline-block; }
-.about-subtitle { font-size: 12px; letter-spacing: 0.2em; color: var(--mid); margin-bottom: 32px; }
-
+.about-subtitle { font-size: 18px; letter-spacing: 0.2em; color: var(--mid); margin-bottom: 32px; }
 .about-tagline {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(15px, 2vw, 20px);
-  font-weight: 300; letter-spacing: 0.03em; line-height: 1.9;
-  opacity: 0.72; margin-bottom: 80px;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif; font-size: clamp(15px, 2vw, 20px);
+  font-weight: 300; letter-spacing: 0.03em; line-height: 1.9; opacity: 0.72; margin-bottom: 80px;
   max-width: 560px; margin-left: auto; margin-right: auto;
 }
-
 .about-section { margin-bottom: 64px; }
 .about-glyph {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(44px, 7vw, 80px);
-  font-weight: 300; line-height: 1;
-  color: rgba(26,25,22,0.15); margin-bottom: 16px;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif; font-size: clamp(44px, 7vw, 80px);
+  font-weight: 300; line-height: 1; color: rgba(26,25,22,0.55); margin-bottom: 16px;
 }
 .about-section-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(16px, 2vw, 21px);
-  font-weight: 300; letter-spacing: 0.06em;
-  margin-bottom: 20px; color: var(--mid);
+  font-family: 'Zen Kaku Gothic Antique', sans-serif; font-size: clamp(16px, 2vw, 21px);
+  font-weight: 300; letter-spacing: 0.06em; margin-bottom: 20px; color: var(--mid);
 }
-.about-section p {
-  font-size: 13px; line-height: 2.2; color: #3a3936; margin-bottom: 16px;
-}
+.about-section p { font-size: 13px; line-height: 2.2; color: var(--dark); margin-bottom: 16px; }
 .about-section p:last-child { margin-bottom: 0; }
-.about-divider {
-  border: none; border-top: 1px solid rgba(26,25,22,0.1);
-  margin: 64px auto; max-width: 80px;
-}
+.about-divider { border: none; border-top: 1px solid rgba(26,25,22,0.1); margin: 64px auto; max-width: 80px; }
 .about-final .about-glyph { color: rgba(26,25,22,0.1); }
-
-/* ═══════════════════════════════════════
-   CONTACT
-   ═══════════════════════════════════════ */
 #page-contact { min-height: 100vh; padding-top: var(--nav-h); }
 .contact-header { padding: 64px 52px 52px; border-bottom: 1px solid rgba(26,25,22,0.1); }
 .contact-header-label { display: block; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mid); margin-bottom: 22px; }
-.contact-header-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px,3.6vw,46px); font-weight: 300; letter-spacing: 0.04em; line-height: 1.15; margin-bottom: 24px; }
+.contact-header-title { font-family: 'Zen Kaku Gothic Antique', sans-serif; font-size: clamp(26px,3.6vw,46px); font-weight: 300; letter-spacing: 0.04em; line-height: 1.15; margin-bottom: 24px; }
 .contact-header-body { font-size: 13px; line-height: 2.1; color: var(--mid); max-width: 520px; }
 .contact-header-body a { color: var(--dark); text-decoration: none; border-bottom: 1px solid rgba(26,25,22,0.3); transition: opacity 0.25s; }
 .contact-header-body a:hover { opacity: 0.5; }
@@ -288,18 +201,18 @@ nav.visible { opacity: 1; transform: translateY(0); }
 .flow-step-v { display: grid; grid-template-columns: 52px 1fr; gap: 0 24px; }
 .flow-step-v-num { font-size: 10px; letter-spacing: 0.25em; color: var(--mid); padding-top: 24px; }
 .flow-step-v-body { border-top: 1px solid rgba(26,25,22,0.12); padding: 22px 0 36px; }
-.flow-step-v-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(19px,2vw,24px); font-weight: 300; letter-spacing: 0.04em; margin-bottom: 12px; }
+.flow-step-v-title { font-family: 'Zen Kaku Gothic Antique', sans-serif; font-size: clamp(19px,2vw,24px); font-weight: 300; letter-spacing: 0.04em; margin-bottom: 12px; }
 .flow-step-v-text { font-size: 13px; line-height: 2.1; color: #3a3936; }
 .flow-connector-v { display: flex; padding-left: 22px; margin: 2px 0; }
 .contact-form-section { padding: 64px 52px 100px; }
 .form-section-label { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mid); display: block; margin-bottom: 22px; }
-.form-section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(20px,2.6vw,30px); font-weight: 300; letter-spacing: 0.04em; margin-bottom: 44px; }
+.form-section-title { font-family: 'Zen Kaku Gothic Antique', sans-serif; font-size: clamp(20px,2.6vw,30px); font-weight: 300; letter-spacing: 0.04em; margin-bottom: 44px; }
 .contact-form { max-width: 620px; }
 .form-row { margin-bottom: 32px; }
 .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 32px; }
 .form-field-label { display: block; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
 .form-required { color: var(--dark); margin-left: 2px; }
-.form-input { width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(26,25,22,0.2); padding: 8px 0 12px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 300; color: var(--dark); outline: none; transition: border-color 0.3s; border-radius: 0; appearance: none; -webkit-appearance: none; }
+.form-input { width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(26,25,22,0.2); padding: 8px 0 12px; font-family: 'Zen Kaku Gothic Antique', sans-serif; font-size: 14px; font-weight: 300; color: var(--dark); outline: none; transition: border-color 0.3s; border-radius: 0; appearance: none; -webkit-appearance: none; }
 .form-input:focus { border-bottom-color: var(--dark); }
 .form-input::placeholder { color: rgba(107,104,96,0.45); }
 .form-select-wrap { position: relative; }
@@ -307,22 +220,16 @@ nav.visible { opacity: 1; transform: translateY(0); }
 select.form-input { cursor: pointer; padding-right: 24px; }
 textarea.form-input { resize: vertical; min-height: 130px; line-height: 1.9; }
 .form-submit-wrap { margin-top: 44px; }
-.form-submit { background: var(--dark); color: var(--cream); border: none; padding: 16px 52px; font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; cursor: pointer; transition: opacity 0.25s; }
+.form-submit { background: var(--dark); color: var(--cream); border: none; padding: 16px 52px; font-family: 'Zen Kaku Gothic Antique', sans-serif; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; cursor: pointer; transition: opacity 0.25s; }
 .form-submit:hover { opacity: 0.7; }
 .form-success { display: none; padding: 20px 24px; border: 1px solid rgba(26,25,22,0.15); font-size: 13px; color: var(--dark); line-height: 2; margin-top: 24px; }
 .form-success.visible { display: block; }
 .form-note { font-size: 11px; color: var(--mid); line-height: 2; margin-top: 20px; }
 .form-note a { color: var(--dark); }
-
-/* ── LIGHTBOX ── */
 .lightbox { display: none; position: fixed; inset: 0; background: rgba(26,25,22,0.97); z-index: 500; justify-content: center; align-items: center; cursor: zoom-out; }
 .lightbox.open { display: flex; }
 .lightbox img { max-width: 92vw; max-height: 92vh; object-fit: contain; cursor: default; }
 .lightbox-close { position: absolute; top: 20px; right: 24px; color: rgba(247,245,240,0.5); font-size: 36px; cursor: pointer; background: none; border: none; line-height: 1; font-weight: 200; }
-
-/* ═══════════════════════════════════════
-   MOBILE  ≤ 768px
-   ═══════════════════════════════════════ */
 @media (max-width: 768px) {
   :root { --nav-h: 56px; }
   nav { padding: 0 20px; }
@@ -330,25 +237,21 @@ textarea.form-input { resize: vertical; min-height: 130px; line-height: 1.9; }
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
   .nav-mobile-menu { display: block; }
-
   .works-list { padding-top: 16px; }
   .project-row { display: flex; flex-direction: column; margin-bottom: 48px; }
   .card-img-wrap { width: 100%; height: 60vw; min-height: 200px; order: 1; }
   .card-label { order: 2; text-align: left; align-items: flex-start; padding: 16px 20px 0; }
+  .card-title-label { white-space: normal; font-size: 14px; }
   .card-concept-tag { opacity: 1; transform: none; max-width: 100%; text-align: left; font-size: 12px; margin-top: 4px; }
   .card-right { display: none; }
   .works-footer { padding: 24px 20px; flex-direction: column; gap: 10px; }
-
   .project-wrap { grid-template-columns: 1fr; padding-top: var(--nav-h); min-height: unset; }
   .project-left { position: static; height: auto; overflow: visible; padding: 32px 20px 36px; border-right: none; border-bottom: 1px solid rgba(26,25,22,0.1); }
   .project-detail-title { font-size: clamp(14px,4vw,18px); margin-bottom: 20px; }
   .concept-tagline { font-size: clamp(17px,5vw,22px); }
   .stack-photo { margin-bottom: 2px; }
-
-  /* About — モバイルもセンター揃え */
   .about-inner { padding: 48px 24px 80px; }
   .about-tagline { max-width: 100%; }
-
   .contact-header { padding: 44px 20px 40px; }
   .contact-flow { padding: 44px 20px 52px; }
   .flow-step-v { grid-template-columns: 40px 1fr; gap: 0 16px; }
@@ -356,16 +259,13 @@ textarea.form-input { resize: vertical; min-height: 130px; line-height: 1.9; }
   .form-row-2 { grid-template-columns: 1fr; gap: 32px; }
   .form-submit { width: 100%; padding: 18px; text-align: center; }
 }
-
-/* ═══════════════════════════════════════
-   TABLET  769px – 1024px
-   ═══════════════════════════════════════ */
 @media (min-width: 769px) and (max-width: 1024px) {
   nav { padding: 0 32px; }
   .nav-logo img { height: 40px; }
-  .project-row { grid-template-columns: 26% 48% 26%; margin-bottom: 72px; }
+  .project-row { grid-template-columns: 30% 42% 28%; margin-bottom: 72px; }
   .card-label { padding: 0 20px 6px 32px; }
   .card-right { padding: 0 32px 6px 20px; }
+  .card-title-label { font-size: 14px; }
   .card-img-wrap { height: 52vh; }
   .project-wrap { grid-template-columns: 42% 58%; }
   .project-left { padding: 40px 32px 40px 32px; }
@@ -404,239 +304,23 @@ textarea.form-input { resize: vertical; min-height: 130px; line-height: 1.9; }
   </ul>
 </div>
 
-<!-- ═══ WORKS ═══ -->
+<!-- WORKS -->
 <div id="page-works" class="page active">
-  <div class="works-list" id="works-list">
-
-    <div class="project-row" onclick="showPage('shimokita')">
-      <div class="card-label">
-        <span class="card-num">01</span>
-        <span class="card-title-label">下北沢のフォトスタジオ</span>
-        <span class="card-concept-tag">焚き火のように、揺らぐ背景<br>— falo studio</span>
-      </div>
-      <div class="card-img-wrap">
-        <img src="https://drive.google.com/thumbnail?id=1IGW8weV1HaCuY0iuTlbU4bbdtYb52gHy&sz=w1200" alt="下北沢のフォトスタジオ" loading="lazy">
-      </div>
-      <div class="card-right"><span class="card-arrow">→</span></div>
-    </div>
-
-    <div class="project-row" onclick="showPage('shibuya')">
-      <div class="card-label">
-        <span class="card-num">02</span>
-        <span class="card-title-label">渋谷の美容室</span>
-        <span class="card-concept-tag">削ぎ落とした空間に、<br>残るもの</span>
-      </div>
-      <div class="card-img-wrap">
-        <img src="https://drive.google.com/thumbnail?id=12-ETf0g39JjVzRtLDcpwNoKmWNxmM4S-&sz=w1200" alt="渋谷の美容室" loading="lazy">
-      </div>
-      <div class="card-right"><span class="card-arrow">→</span></div>
-    </div>
-
-    <div class="project-row" onclick="showPage('sangenjaya')">
-      <div class="card-label">
-        <span class="card-num">03</span>
-        <span class="card-title-label">三軒茶屋のフォトスタジオ</span>
-        <span class="card-concept-tag">街の温度を、<br>背景に織り込む</span>
-      </div>
-      <div class="card-img-wrap">
-        <img src="https://drive.google.com/thumbnail?id=1fcFHIXLFFDwO10K8Voa5-NCUuxHdr0iB&sz=w1200" alt="三軒茶屋のフォトスタジオ" loading="lazy">
-      </div>
-      <div class="card-right"><span class="card-arrow">→</span></div>
-    </div>
-
-    <div class="project-row" onclick="showPage('installation')">
-      <div class="card-label">
-        <span class="card-num">04</span>
-        <span class="card-title-label">Installation</span>
-        <span class="card-concept-tag">素材が<br>問いになるとき</span>
-      </div>
-      <div class="card-img-wrap">
-        <img src="https://drive.google.com/thumbnail?id=1jgqj_wlDUHCwQyzeDz0zSnkWfozPpk-T&sz=w1200" alt="Installation" loading="lazy">
-      </div>
-      <div class="card-right"><span class="card-arrow">→</span></div>
-    </div>
-
-  </div>
+  <div class="works-list" id="works-list-container"></div>
   <footer class="works-footer">
     <img src="https://drive.google.com/thumbnail?id=1lmcL3Ro0FB4TuoyzZA8yqX882bubm0sy&sz=w1080" alt="n!l">
     <span>&copy; 2024 n!l</span>
   </footer>
 </div>
 
-<!-- ═══ 01 下北沢のフォトスタジオ ═══ -->
-<div id="page-shimokita" class="page">
-  <div class="project-wrap">
-    <div class="project-left">
-      <button class="back-btn" onclick="showPage('works')">Works</button>
-      <p class="project-detail-title">下北沢のフォトスタジオ</p>
-      <p class="concept-tagline">焚き火のように、<br>揺らぐ背景<br>— falo studio</p>
-      <div class="concept-body">
-        <p>スタジオの名は "falo"。イタリア語で焚き火を意味する。炎がひとときも同じ姿をとどめないように、時の移ろいとともにゆるやかに変わりつづける空間を目指した。</p>
-        <p>三方に開口を持つ立地を活かし、その中心に一枚の曲面壁を立ち上げた。差し込む自然光が曲面をなぞるたび、陰影は刻々と濃淡を変えていく。</p>
-        <p>砂丘を思わせるラグ、ドレープを丁寧に操ったカーテン、光を映すステンレスの扉——いずれも、移ろう自然光を敏感に受け止める素材として選んだ。光の変化はそのまま素材の表情となり、空間に奥行きをもたらす。</p>
-        <p>曲面に沿うレースと遮光のカーテン、そして可動の什器。これらを組み替えれば、背景はそのつど大きく入れ替わる。場を固定しないこの設計は、使い手が自らのイメージのままにスタジオを「編集」することを許容している。</p>
-        <p>光と時間がもたらす受動的で微細な移ろいと、使い手が加える能動的な編集。ふたつの揺らぎが静かに重なり合うとき、空間は炎の前に腰を下ろしたときのように人をほどいていく。構えがとけ、ふと素のいい表情がこぼれる——その一瞬を写し取るための、背景である。</p>
-      </div>
-    </div>
-    <div class="project-right">
-      <div class="photo-stack">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=1IGW8weV1HaCuY0iuTlbU4bbdtYb52gHy&sz=w1600" data-full="https://drive.google.com/thumbnail?id=1IGW8weV1HaCuY0iuTlbU4bbdtYb52gHy&sz=w1600" alt="" loading="lazy">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=1UdaXh2uNpZLOO57urOYsE7mQ30DAs2yf&sz=w1600" data-full="https://drive.google.com/thumbnail?id=1UdaXh2uNpZLOO57urOYsE7mQ30DAs2yf&sz=w1600" alt="" loading="lazy">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=1-J0CGnpUQgtRrgNaHR713MgoAsJhChoI&sz=w1600" data-full="https://drive.google.com/thumbnail?id=1-J0CGnpUQgtRrgNaHR713MgoAsJhChoI&sz=w1600" alt="" loading="lazy">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=1quihfJCfVmdlx-zK7dI0HA75fJRQ0yit&sz=w1600" data-full="https://drive.google.com/thumbnail?id=1quihfJCfVmdlx-zK7dI0HA75fJRQ0yit&sz=w1600" alt="" loading="lazy">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=1ZifVbk4q8aYcrSE0Vr-mFa9qTYBdb_Of&sz=w1600" data-full="https://drive.google.com/thumbnail?id=1ZifVbk4q8aYcrSE0Vr-mFa9qTYBdb_Of&sz=w1600" alt="" loading="lazy">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=1OFbYxO5WPCqoc6AQ85GkZk3r81qCbOKT&sz=w1600" data-full="https://drive.google.com/thumbnail?id=1OFbYxO5WPCqoc6AQ85GkZk3r81qCbOKT&sz=w1600" alt="" loading="lazy">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=1s-uBI6lPcJtEm02OdzGhE5Sm6vVYq6kZ&sz=w1600" data-full="https://drive.google.com/thumbnail?id=1s-uBI6lPcJtEm02OdzGhE5Sm6vVYq6kZ&sz=w1600" alt="" loading="lazy">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=1bjcETeyx60MSaglcW2TGi8Z230pzdiz9&sz=w1600" data-full="https://drive.google.com/thumbnail?id=1bjcETeyx60MSaglcW2TGi8Z230pzdiz9&sz=w1600" alt="" loading="lazy">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=1sKarq4guRgLoCnJwzPFVjcQFQCykgFXt&sz=w1600" data-full="https://drive.google.com/thumbnail?id=1sKarq4guRgLoCnJwzPFVjcQFQCykgFXt&sz=w1600" alt="" loading="lazy">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=1VS7eJrmxML7qDV9-UVPmpX0695Yjpz6K&sz=w1600" data-full="https://drive.google.com/thumbnail?id=1VS7eJrmxML7qDV9-UVPmpX0695Yjpz6K&sz=w1600" alt="" loading="lazy">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=1h3m8qt4Fjg_kkhYyxZx9CuB719fj_lNF&sz=w1600" data-full="https://drive.google.com/thumbnail?id=1h3m8qt4Fjg_kkhYyxZx9CuB719fj_lNF&sz=w1600" alt="" loading="lazy">
-      </div>
-    </div>
-  </div>
-</div>
+<!-- プロジェクト詳細: JSで生成 -->
 
-<!-- ═══ 02 渋谷の美容室 ═══ -->
-<div id="page-shibuya" class="page">
-  <div class="project-wrap">
-    <div class="project-left">
-      <button class="back-btn" onclick="showPage('works')">Works</button>
-      <p class="project-detail-title">渋谷の美容室</p>
-      <p class="concept-tagline">削ぎ落とした空間に、<br>残るもの</p>
-      <div class="concept-body">
-        <p>渋谷という過剰な文脈の中に、意識的に余白を設けた。カットという行為は、素材と向き合い、不要なものを取り除いていく仕事だ。</p>
-        <p>その場所もまた、余分な主張を排し、施術者と客のあいだに起きることだけが浮かび上がる空間を目指した。白い壁に光が落ち、椅子の脚が床に影を引く——それだけがあれば、十分だと思った。</p>
-        <p>素材は触れる人の体温を映し、時間とともに育っていく。竣工がゴールではなく、使われることで完成していく空間として設計した。</p>
-        <p class="concept-note">※ このコンセプト文はダミーです。正式なテキストに差し替えてください。</p>
-      </div>
-    </div>
-    <div class="project-right">
-      <div class="photo-stack">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=12-ETf0g39JjVzRtLDcpwNoKmWNxmM4S-&sz=w1600" data-full="https://drive.google.com/thumbnail?id=12-ETf0g39JjVzRtLDcpwNoKmWNxmM4S-&sz=w1600" alt="" loading="lazy">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=1HAx_4eKfCrhn96B6iK5CZHBUlEqqCpkn&sz=w1600" data-full="https://drive.google.com/thumbnail?id=1HAx_4eKfCrhn96B6iK5CZHBUlEqqCpkn&sz=w1600" alt="" loading="lazy">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=1KkOUo250zxW0MEVVzLMQQ9SmCsZl7Mo3&sz=w1600" data-full="https://drive.google.com/thumbnail?id=1KkOUo250zxW0MEVVzLMQQ9SmCsZl7Mo3&sz=w1600" alt="" loading="lazy">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=10qVDu2ztznDtt8SmeJPNucYJhKw3Uth0&sz=w1600" data-full="https://drive.google.com/thumbnail?id=10qVDu2ztznDtt8SmeJPNucYJhKw3Uth0&sz=w1600" alt="" loading="lazy">
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ 03 三軒茶屋のフォトスタジオ ═══ -->
-<div id="page-sangenjaya" class="page">
-  <div class="project-wrap">
-    <div class="project-left">
-      <button class="back-btn" onclick="showPage('works')">Works</button>
-      <p class="project-detail-title">三軒茶屋のフォトスタジオ</p>
-      <p class="concept-tagline">街の温度を、<br>背景に織り込む</p>
-      <div class="concept-body">
-        <p>三軒茶屋が持つ、少し古くて親しみやすい空気をスタジオに持ち込んだ。路地に迷い込んだときのような、発見のある空間にしたかった。</p>
-        <p>写真とは、瞬間を定着させる技術だ。その瞬間が宿る背景を、街の記憶から丁寧に拾い上げた。完璧に整えられた空間ではなく、少し気の抜けた佇まいが、被写体の緊張を解く。</p>
-        <p>壁の塗りムラ、床の節目、窓の外に見える電線——意図せず入り込む要素が、ときに写真に奥行きを与える。そういった余地を、あえて設計の中に残した。</p>
-        <p class="concept-note">※ このコンセプト文はダミーです。正式なテキストに差し替えてください。</p>
-      </div>
-    </div>
-    <div class="project-right">
-      <div class="photo-stack">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=1fcFHIXLFFDwO10K8Voa5-NCUuxHdr0iB&sz=w1600" data-full="https://drive.google.com/thumbnail?id=1fcFHIXLFFDwO10K8Voa5-NCUuxHdr0iB&sz=w1600" alt="" loading="lazy">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=1WnO5O7ru1y2R5AQWCtoKs_-RIod-Pg9P&sz=w1600" data-full="https://drive.google.com/thumbnail?id=1WnO5O7ru1y2R5AQWCtoKs_-RIod-Pg9P&sz=w1600" alt="" loading="lazy">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=1rZFNBnxKjLkvZwD4wxOTxz4hjJNouwMa&sz=w1600" data-full="https://drive.google.com/thumbnail?id=1rZFNBnxKjLkvZwD4wxOTxz4hjJNouwMa&sz=w1600" alt="" loading="lazy">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=1bkHQiH52zNjmUuitsqpH4h90rSIGjxrU&sz=w1600" data-full="https://drive.google.com/thumbnail?id=1bkHQiH52zNjmUuitsqpH4h90rSIGjxrU&sz=w1600" alt="" loading="lazy">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=1SLKM6OdD60-oMCkoVGxHJo_fLU2qV9Sm&sz=w1600" data-full="https://drive.google.com/thumbnail?id=1SLKM6OdD60-oMCkoVGxHJo_fLU2qV9Sm&sz=w1600" alt="" loading="lazy">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=1BBh9t0T4Rz9F1NyFn5wPIkQI-hvEacW6&sz=w1600" data-full="https://drive.google.com/thumbnail?id=1BBh9t0T4Rz9F1NyFn5wPIkQI-hvEacW6&sz=w1600" alt="" loading="lazy">
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ 04 Installation ═══ -->
-<div id="page-installation" class="page">
-  <div class="project-wrap">
-    <div class="project-left">
-      <button class="back-btn" onclick="showPage('works')">Works</button>
-      <p class="project-detail-title">Installation</p>
-      <p class="concept-tagline">素材が<br>問いになるとき</p>
-      <div class="concept-body">
-        <p>既成の空間に手を加え、そこで起きる知覚の変容を記録するインスタレーション。建築という枠組みから離れ、素材・光・身体の関係をゼロから問い直した実験的な試みである。</p>
-        <p>通り過ぎていたはずの場所が、立ち止まらせる場所になる。そのための最小限の操作を探し続けた。</p>
-        <p>インスタレーションは完成せず、訪れる人の動きや時間の経過とともに変化しつづける。その未完の状態こそが、作品の本質だと考えた。</p>
-        <p class="concept-note">※ このコンセプト文はダミーです。正式なテキストに差し替えてください。</p>
-      </div>
-    </div>
-    <div class="project-right">
-      <div class="photo-stack">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=1jgqj_wlDUHCwQyzeDz0zSnkWfozPpk-T&sz=w1600" data-full="https://drive.google.com/thumbnail?id=1jgqj_wlDUHCwQyzeDz0zSnkWfozPpk-T&sz=w1600" alt="" loading="lazy">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=1So4RN69eLnjiqPy1eLsWQBZW1M6NH1LO&sz=w1600" data-full="https://drive.google.com/thumbnail?id=1So4RN69eLnjiqPy1eLsWQBZW1M6NH1LO&sz=w1600" alt="" loading="lazy">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=1Km_ij3KSB5rkPmx941dmK9aOp2X3lcmJ&sz=w1600" data-full="https://drive.google.com/thumbnail?id=1Km_ij3KSB5rkPmx941dmK9aOp2X3lcmJ&sz=w1600" alt="" loading="lazy">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=1aexQ6PrKhGn4xr93PNMXisSkfDCstVkr&sz=w1600" data-full="https://drive.google.com/thumbnail?id=1aexQ6PrKhGn4xr93PNMXisSkfDCstVkr&sz=w1600" alt="" loading="lazy">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=1HNUlgVMhdlNcoKgAqZEdFunjtKj6q4LR&sz=w1600" data-full="https://drive.google.com/thumbnail?id=1HNUlgVMhdlNcoKgAqZEdFunjtKj6q4LR&sz=w1600" alt="" loading="lazy">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=1fYIAsjxq4FQFP6v_faiZu5N7xra9mlWE&sz=w1600" data-full="https://drive.google.com/thumbnail?id=1fYIAsjxq4FQFP6v_faiZu5N7xra9mlWE&sz=w1600" alt="" loading="lazy">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=1hpMDppbSBj-g0vKkQon_LrhJjlIr2R6D&sz=w1600" data-full="https://drive.google.com/thumbnail?id=1hpMDppbSBj-g0vKkQon_LrhJjlIr2R6D&sz=w1600" alt="" loading="lazy">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=1dhi8c3Vwj3b2jGcSvPwf7sSCQeIHlKVn&sz=w1600" data-full="https://drive.google.com/thumbnail?id=1dhi8c3Vwj3b2jGcSvPwf7sSCQeIHlKVn&sz=w1600" alt="" loading="lazy">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=1xWGGrlxRpk1efUoi4q449uqx2avutT--&sz=w1600" data-full="https://drive.google.com/thumbnail?id=1xWGGrlxRpk1efUoi4q449uqx2avutT--&sz=w1600" alt="" loading="lazy">
-        <img class="stack-photo" src="https://drive.google.com/thumbnail?id=1VDCYqVIUh0tGLL_mcRbJgq0vRf454P5t&sz=w1600" data-full="https://drive.google.com/thumbnail?id=1VDCYqVIUh0tGLL_mcRbJgq0vRf454P5t&sz=w1600" alt="" loading="lazy">
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ ABOUT ═══ -->
+<!-- ABOUT -->
 <div id="page-about" class="page">
-  <div class="about-inner">
-
-    <!-- ロゴ・サブタイトル（即表示） -->
-    <div class="about-logo-wrap">
-      <img src="https://drive.google.com/thumbnail?id=1lmcL3Ro0FB4TuoyzZA8yqX882bubm0sy&sz=w1080" alt="n!l">
-    </div>
-    <p class="about-subtitle">n!l（ニル）</p>
-
-    <!-- タグライン -->
-    <p class="about-tagline fade-section">
-      n!lという名前に、「場所の記憶やクライアントの想いに耳を傾け、そこに潜むあらゆる可能性を掛け合わせることで、まだ見ぬ新しい価値を空間に立ち上げる」という意味を込めました。
-    </p>
-
-    <!-- n -->
-    <div class="about-section fade-section">
-      <div class="about-glyph">n</div>
-      <h2 class="about-section-title">n &nbsp;-未知数-</h2>
-      <p>どんな場所にも、まだ誰も解いていない問いが潜んでいます。 土地の記憶。施主の想い。言葉になる前の直感。<br>
-      それが全部、n です。<br>
-      私たちの設計は、そのプロジェクトだけの n を見つけることから始まります。</p>
-    </div>
-
-    <!-- ! -->
-    <div class="about-section fade-section">
-      <div class="about-glyph">!</div>
-      <h2 class="about-section-title">! &nbsp;-可能性をかけ合わせること-</h2>
-      <p>「!」は階乗を表しています。1 × 2 × 3 ×…… 掛け合わせるほど、答えは爆発的に増えていきます。</p>
-      <p>技術と感性、空間と人、文脈と遊び心…… n を掛け合わせ、 予想のひとつ上を行く「!」をつくる。<br>
-      それが私たちの仕事です。</p>
-    </div>
-
-    <!-- l -->
-    <div class="about-section fade-section">
-      <div class="about-glyph">l</div>
-      <h2 class="about-section-title">l &nbsp;-可能性を煮詰める場所-</h2>
-      <p>仮説を立てる。試す。また問い直す。<br>
-      正解らしきものに、安易には着地しません。<br>
-      納得する解が出るまで、何度でも煮詰めるラボ。</p>
-    </div>
-
-    <hr class="about-divider fade-section">
-
-    <!-- 並べて、n!l -->
-    <div class="about-section about-final fade-section">
-      <div class="about-glyph">n!l</div>
-      <h2 class="about-section-title">並べて、n!l。</h2>
-      <p>「nil」——ラテン語でゼロを意味します。<br>
-      前例ゼロ。先入観ゼロ。<br>
-      毎回ゼロから問い直し、「！」を求めて新しい価値を<br>
-      組み上げることを目指すデザインコレクティブです。</p>
-    </div>
-
-  </div>
+  <div class="about-inner" id="about-inner"></div>
 </div>
 
-<!-- ═══ CONTACT ═══ -->
+<!-- CONTACT -->
 <div id="page-contact" class="page">
   <div class="contact-header">
     <span class="contact-header-label">Contact</span>
@@ -740,18 +424,378 @@ textarea.form-input { resize: vertical; min-height: 130px; line-height: 1.9; }
 </div>
 
 <script>
-const PROJECT_PAGES = ['shimokita','shibuya','sangenjaya','installation'];
+const _CV = '0'; // cache version — updated by update.py
+const IMG = (id, sz) => `https://drive.google.com/thumbnail?id=${id}&sz=${sz || 'w1200'}&_v=${_CV}`;
+const esc = s => String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-/* ── フェードイン Observer ── */
+
+/*==DATA_START==*/
+/* このブロックは update.py が自動更新します — 手動編集不要 */
+const CMS_WORKS = [
+  {
+    "id": "shimokita",
+    "num": "1",
+    "name": "\u4e0b\u5317\u6ca2\u306e\u30d5\u30a9\u30c8\u30b9\u30bf\u30b8\u30aa",
+    "card_subtitle": "\u711a\u304d\u706b\u306e\u3088\u3046\u306b\u3001\n\u63fa\u3089\u3050\u80cc\u666f\n\u2014 falo studio",
+    "detail_tagline": "\u711a\u304d\u706b\u306e\u3088\u3046\u306b\u3001\n\u63fa\u3089\u3050\u80cc\u666f\n\u2014 falo studio",
+    "detail_body": "\u30b9\u30bf\u30b8\u30aa\u306e\u540d\u306f \"falo\"\u3001\u30a4\u30bf\u30ea\u30a2\u8a9e\u3067\u711a\u304d\u706b\u3092\u610f\u5473\u3059\u308b\u3002\u708e\u304c\u3072\u3068\u3068\u304d\u3082\u540c\u3058\u59ff\u3092\u3068\u3069\u3081\u306a\u3044\u3088\u3046\u306b\u3001\u6642\u306e\u79fb\u308d\u3044\u3068\u3068\u3082\u306b\u3086\u308b\u3084\u304b\u306b\u5909\u308f\u308a\u3064\u3065\u3051\u308b\u7a7a\u9593\u3092\u76ee\u6307\u3057\u305f\u3002\n\n\u4e09\u65b9\u306b\u958b\u53e3\u3092\u6301\u3064\u7acb\u5730\u3092\u6d3b\u304b\u3057\u3001\u305d\u306e\u4e2d\u5fc3\u306b\u4e00\u679a\u306e\u66f2\u9762\u58c1\u3092\u7acb\u3061\u4e0a\u3052\u305f\u3002\u5dee\u3057\u8fbc\u3080\u81ea\u7136\u5149\u304c\u66f2\u9762\u3092\u306a\u305e\u308b\u305f\u3073\u3001\u9670\u5f71\u306f\u523b\u3005\u3068\u6fc3\u6de1\u3092\u5909\u3048\u3066\u3044\u304f\u3002\n\n\u7802\u4e18\u3092\u601d\u308f\u305b\u308b\u30e9\u30b0\u3001\u30c9\u30ec\u30fc\u30d7\u3092\u4e01\u5be7\u306b\u634c\u3044\u305f\u30ab\u30fc\u30c6\u30f3\u3001\u5149\u3092\u6620\u3059\u30b9\u30c6\u30f3\u30ec\u30b9\u306e\u6249\u2014\u2014\u3044\u305a\u308c\u3082\u3001\u79fb\u308d\u3046\u81ea\u7136\u5149\u3092\u654f\u611f\u306b\u53d7\u3051\u6b62\u3081\u308b\u7d20\u6750\u3068\u3057\u3066\u9078\u3093\u3060\u3002\u5149\u306e\u5909\u5316\u306f\u305d\u306e\u307e\u307e\u7d20\u6750\u306e\u8868\u60c5\u3068\u306a\u308a\u3001\u7a7a\u9593\u306b\u5965\u884c\u304d\u3092\u3082\u305f\u3089\u3059\u3002\n\n\u66f2\u9762\u306b\u6cbf\u3046\u30ec\u30fc\u30b9\u3068\u900f\u5149\u306e\u30ab\u30fc\u30c6\u30f3\u3001\u305d\u3057\u3066\u53ef\u52d5\u306e\u4ed5\u7d44\u307f\u3002\u3053\u308c\u3089\u3092\u7d44\u307f\u66ff\u3048\u308c\u3070\u3001\u80cc\u666f\u306f\u305d\u306e\u3064\u3069\u5927\u304d\u304f\u5165\u308c\u66ff\u308f\u308b\u3002\u5834\u3092\u56fa\u5b9a\u3057\u306a\u3044\u3053\u306e\u8a2d\u8a08\u306f\u3001\u4f7f\u3044\u624b\u304c\u81ea\u3089\u306e\u30a4\u30e1\u30fc\u30b8\u306e\u307e\u307e\u306b\u30b9\u30bf\u30b8\u30aa\u3092\u300c\u7de8\u96c6\u300d\u3059\u308b\u3053\u3068\u3092\u8a31\u5bb9\u3057\u3066\u3044\u308b\u3002\n\n\u5149\u3068\u6642\u9593\u304c\u3082\u305f\u3089\u3059\u53d7\u52d5\u7684\u3067\u5fae\u7d30\u306a\u79fb\u308d\u3044\u3068\u3001\u4f7f\u3044\u624b\u304c\u52a0\u3048\u308b\u80fd\u52d5\u7684\u306a\u7de8\u96c6\u3002\u3075\u305f\u3064\u306e\u63fa\u3089\u304e\u304c\u9759\u304b\u306b\u91cd\u306a\u308a\u5408\u3046\u3068\u304d\u3001\u7a7a\u9593\u306f\u708e\u306e\u524d\u306b\u8170\u3092\u4e0b\u308d\u3057\u305f\u3068\u304d\u306e\u3088\u3046\u306b\u4eba\u3092\u307b\u3069\u3044\u3066\u3044\u304f\u3002\u69cb\u3048\u304c\u3068\u3051\u3001\u3075\u3068\u7d20\u306e\u3044\u3044\u8868\u60c5\u304c\u3053\u307c\u308c\u308b\u2014\u2014\u305d\u306e\u4e00\u77ac\u3092\u5199\u3057\u53d6\u308b\u305f\u3081\u306e\u3001\u80cc\u666f\u3067\u3042\u308b\u3002",
+    "card_img": "1IGW8weV1HaCuY0iuTlbU4bbdtYb52gHy"
+  },
+  {
+    "id": "shibuya",
+    "num": "2",
+    "name": "\u6e0b\u8c37\u306e\u7f8e\u5bb9\u5ba4",
+    "card_subtitle": "\u524a\u304e\u843d\u3068\u3057\u305f\u7a7a\u9593\u306b\u3001\n\u6b8b\u308b\u3082\u306e",
+    "detail_tagline": "\u524a\u304e\u843d\u3068\u3057\u305f\u7a7a\u9593\u306b\u3001\n\u6b8b\u308b\u3082\u306e",
+    "detail_body": "\u6e0b\u8c37\u3068\u3044\u3046\u904e\u5270\u306a\u6587\u8108\u306e\u4e2d\u306b\u3001\u610f\u8b58\u7684\u306b\u4f59\u767d\u3092\u8a2d\u3051\u305f\u3002\u30ab\u30c3\u30c8\u3068\u3044\u3046\u884c\u70ba\u306f\u3001\u7d20\u6750\u3068\u5411\u304d\u5408\u3044\u3001\u4e0d\u8981\u306a\u3082\u306e\u3092\u53d6\u308a\u9664\u3044\u3066\u3044\u304f\u4ed5\u4e8b\u3060\u3002\n\n\u305d\u306e\u5834\u6240\u3082\u307e\u305f\u3001\u4f59\u5206\u306a\u4e3b\u5f35\u3092\u6392\u3057\u3001\u65bd\u8853\u8005\u3068\u5ba2\u306e\u3042\u3044\u3060\u306b\u8d77\u304d\u308b\u3053\u3068\u3060\u3051\u304c\u6d6e\u304b\u3073\u4e0a\u304c\u308b\u7a7a\u9593\u3092\u76ee\u6307\u3057\u305f\u3002\u767d\u3044\u58c1\u306b\u5149\u304c\u843d\u3061\u3001\u6905\u5b50\u306e\u811a\u304c\u5e8a\u306b\u5f71\u3092\u5f15\u304f\u2014\u2014\u305d\u308c\u3060\u3051\u304c\u3042\u308c\u3070\u3001\u5341\u5206\u3060\u3068\u601d\u3063\u305f\u3002\n\n\u7d20\u6750\u306f\u89e6\u308c\u308b\u4eba\u306e\u4f53\u6e29\u3092\u6620\u3057\u3001\u6642\u9593\u3068\u3068\u3082\u306b\u80b2\u3063\u3066\u3044\u304f\u3002\u7ae3\u5de5\u304c\u30b4\u30fc\u30eb\u3067\u306f\u306a\u304f\u3001\u4f7f\u308f\u308c\u308b\u3053\u3068\u3067\u5b8c\u6210\u3057\u3066\u3044\u304f\u7a7a\u9593\u3068\u3057\u3066\u8a2d\u8a08\u3057\u305f\u3002",
+    "card_img": "12-ETf0g39JjVzRtLDcpwNoKmWNxmM4S-"
+  },
+  {
+    "id": "sangenjaya",
+    "num": "3",
+    "name": "\u4e09\u8ed2\u8336\u5c4b\u306e\u30d5\u30a9\u30c8\u30b9\u30bf\u30b8\u30aa",
+    "card_subtitle": "\u8857\u306e\u6e29\u5ea6\u3092\u3001\n\u80cc\u666f\u306b\u7e54\u308a\u8fbc\u3080",
+    "detail_tagline": "\u8857\u306e\u6e29\u5ea6\u3092\u3001\n\u80cc\u666f\u306b\u7e54\u308a\u8fbc\u3080",
+    "detail_body": "\u4e09\u8ed2\u8336\u5c4b\u304c\u6301\u3064\u3001\u5c11\u3057\u53e4\u304f\u3066\u89aa\u3057\u307f\u3084\u3059\u3044\u7a7a\u6c17\u3092\u30b9\u30bf\u30b8\u30aa\u306b\u6301\u3061\u8fbc\u3093\u3060\u3002\u8def\u5730\u306b\u8ff7\u3044\u8fbc\u3093\u3060\u3068\u304d\u306e\u3088\u3046\u306a\u3001\u767a\u898b\u306e\u3042\u308b\u7a7a\u9593\u306b\u3057\u305f\u304b\u3063\u305f\u3002\n\n\u5199\u771f\u3068\u306f\u3001\u77ac\u9593\u3092\u5b9a\u7740\u3055\u305b\u308b\u6280\u8853\u3060\u3002\u305d\u306e\u77ac\u9593\u304c\u5bbf\u308b\u80cc\u666f\u3092\u3001\u8857\u306e\u8a18\u61b6\u304b\u3089\u4e01\u5be7\u306b\u62fe\u3044\u4e0a\u3052\u305f\u3002\u5b8c\u74a7\u306b\u6574\u3048\u3089\u308c\u305f\u7a7a\u9593\u3067\u306f\u306a\u304f\u3001\u5c11\u3057\u6c17\u306e\u629c\u3051\u305f\u4f47\u307e\u3044\u304c\u3001\u88ab\u5199\u4f53\u306e\u7dca\u5f35\u3092\u89e3\u304f\u3002\n\n\u58c1\u306e\u5857\u308a\u30e0\u30e9\u3001\u5e8a\u306e\u7bc0\u76ee\u3001\u7a93\u306e\u5916\u306b\u898b\u3048\u308b\u96fb\u7dda\u2014\u2014\u610f\u56f3\u305b\u305a\u5165\u308a\u8fbc\u3080\u8981\u7d20\u304c\u3001\u3068\u304d\u306b\u5199\u771f\u306b\u5965\u884c\u304d\u3092\u4e0e\u3048\u308b\u3002\u305d\u3046\u3044\u3063\u305f\u4f59\u5730\u3092\u3001\u3042\u3048\u3066\u8a2d\u8a08\u306e\u4e2d\u306b\u6b8b\u3057\u305f\u3002",
+    "card_img": "1fcFHIXLFFDwO10K8Voa5-NCUuxHdr0iB"
+  },
+  {
+    "id": "installation",
+    "num": "4",
+    "name": "Installation",
+    "card_subtitle": "\u7d20\u6750\u304c\n\u554f\u3044\u306b\u306a\u308b\u3068\u304d",
+    "detail_tagline": "\u7d20\u6750\u304c\n\u554f\u3044\u306b\u306a\u308b\u3068\u304d",
+    "detail_body": "\u65e2\u6210\u306e\u7a7a\u9593\u306b\u624b\u3092\u52a0\u3048\u3001\u305d\u3053\u3067\u8d77\u304d\u308b\u77e5\u899a\u306e\u5909\u5bb9\u3092\u8a18\u9332\u3059\u308b\u30a4\u30f3\u30b9\u30bf\u30ec\u30fc\u30b7\u30e7\u30f3\u3002\u5efa\u7bc9\u3068\u3044\u3046\u67a0\u7d44\u307f\u304b\u3089\u96e2\u308c\u3001\u7d20\u6750\u30fb\u5149\u30fb\u8eab\u4f53\u306e\u95a2\u4fc2\u3092\u30bc\u30ed\u304b\u3089\u554f\u3044\u76f4\u3057\u305f\u5b9f\u9a13\u7684\u306a\u8a66\u307f\u3067\u3042\u308b\u3002\n\n\u901a\u308a\u904e\u304e\u3066\u3044\u305f\u306f\u305a\u306e\u5834\u6240\u304c\u3001\u7acb\u3061\u6b62\u307e\u3089\u305b\u308b\u5834\u6240\u306b\u306a\u308b\u3002\u305d\u306e\u305f\u3081\u306e\u6700\u5c0f\u9650\u306e\u64cd\u4f5c\u3092\u63a2\u3057\u7d9a\u3051\u305f\u3002\n\n\u30a4\u30f3\u30b9\u30bf\u30ec\u30fc\u30b7\u30e7\u30f3\u306f\u5b8c\u6210\u305b\u305a\u3001\u8a2a\u308c\u308b\u4eba\u306e\u52d5\u304d\u3084\u6642\u9593\u306e\u7d4c\u904e\u3068\u3068\u3082\u306b\u5909\u5316\u3057\u3064\u3065\u3051\u308b\u3002\u305d\u306e\u672a\u5b8c\u306e\u72b6\u614b\u3053\u305d\u304c\u3001\u4f5c\u54c1\u306e\u672c\u8cea\u3060\u3068\u8003\u3048\u305f\u3002",
+    "card_img": "1jgqj_wlDUHCwQyzeDz0zSnkWfozPpk-T"
+  }
+];
+
+const CMS_PHOTOS = [
+  {
+    "project_id": "shimokita",
+    "order": "1",
+    "drive_id": "1IGW8weV1HaCuY0iuTlbU4bbdtYb52gHy"
+  },
+  {
+    "project_id": "shimokita",
+    "order": "2",
+    "drive_id": "1UdaXh2uNpZLOO57urOYsE7mQ30DAs2yf"
+  },
+  {
+    "project_id": "shimokita",
+    "order": "3",
+    "drive_id": "1-J0CGnpUQgtRrgNaHR713MgoAsJhChoI"
+  },
+  {
+    "project_id": "shimokita",
+    "order": "4",
+    "drive_id": "1quihfJCfVmdlx-zK7dI0HA75fJRQ0yit"
+  },
+  {
+    "project_id": "shimokita",
+    "order": "5",
+    "drive_id": "1ZifVbk4q8aYcrSE0Vr-mFa9qTYBdb_Of"
+  },
+  {
+    "project_id": "shimokita",
+    "order": "6",
+    "drive_id": "1OFbYxO5WPCqoc6AQ85GkZk3r81qCbOKT"
+  },
+  {
+    "project_id": "shimokita",
+    "order": "7",
+    "drive_id": "1s-uBI6lPcJtEm02OdzGhE5Sm6vVYq6kZ"
+  },
+  {
+    "project_id": "shimokita",
+    "order": "8",
+    "drive_id": "1bjcETeyx60MSaglcW2TGi8Z230pzdiz9"
+  },
+  {
+    "project_id": "shimokita",
+    "order": "9",
+    "drive_id": "1sKarq4guRgLoCnJwzPFVjcQFQCykgFXt"
+  },
+  {
+    "project_id": "shimokita",
+    "order": "10",
+    "drive_id": "1VS7eJrmxML7qDV9-UVPmpX0695Yjpz6K"
+  },
+  {
+    "project_id": "shimokita",
+    "order": "11",
+    "drive_id": "1h3m8qt4Fjg_kkhYyxZx9CuB719fj_lNF"
+  },
+  {
+    "project_id": "shibuya",
+    "order": "1",
+    "drive_id": "12-ETf0g39JjVzRtLDcpwNoKmWNxmM4S-"
+  },
+  {
+    "project_id": "shibuya",
+    "order": "2",
+    "drive_id": "1HAx_4eKfCrhn96B6iK5CZHBUlEqqCpkn"
+  },
+  {
+    "project_id": "shibuya",
+    "order": "3",
+    "drive_id": "1KkOUo250zxW0MEVVzLMQQ9SmCsZl7Mo3"
+  },
+  {
+    "project_id": "shibuya",
+    "order": "4",
+    "drive_id": "10qVDu2ztznDtt8SmeJPNucYJhKw3Uth0"
+  },
+  {
+    "project_id": "sangenjaya",
+    "order": "1",
+    "drive_id": "1fcFHIXLFFDwO10K8Voa5-NCUuxHdr0iB"
+  },
+  {
+    "project_id": "sangenjaya",
+    "order": "2",
+    "drive_id": "1WnO5O7ru1y2R5AQWCtoKs_-RIod-Pg9P"
+  },
+  {
+    "project_id": "sangenjaya",
+    "order": "3",
+    "drive_id": "1rZFNBnxKjLkvZwD4wxOTxz4hjJNouwMa"
+  },
+  {
+    "project_id": "sangenjaya",
+    "order": "4",
+    "drive_id": "1bkHQiH52zNjmUuitsqpH4h90rSIGjxrU"
+  },
+  {
+    "project_id": "sangenjaya",
+    "order": "5",
+    "drive_id": "1SLKM6OdD60-oMCkoVGxHJo_fLU2qV9Sm"
+  },
+  {
+    "project_id": "sangenjaya",
+    "order": "6",
+    "drive_id": "1BBh9t0T4Rz9F1NyFn5wPIkQI-hvEacW6"
+  },
+  {
+    "project_id": "installation",
+    "order": "1",
+    "drive_id": "1jgqj_wlDUHCwQyzeDz0zSnkWfozPpk-T"
+  },
+  {
+    "project_id": "installation",
+    "order": "2",
+    "drive_id": "1So4RN69eLnjiqPy1eLsWQBZW1M6NH1LO"
+  },
+  {
+    "project_id": "installation",
+    "order": "3",
+    "drive_id": "1Km_ij3KSB5rkPmx941dmK9aOp2X3lcmJ"
+  },
+  {
+    "project_id": "installation",
+    "order": "4",
+    "drive_id": "1aexQ6PrKhGn4xr93PNMXisSkfDCstVkr"
+  },
+  {
+    "project_id": "installation",
+    "order": "5",
+    "drive_id": "1HNUlgVMhdlNcoKgAqZEdFunjtKj6q4LR"
+  },
+  {
+    "project_id": "installation",
+    "order": "6",
+    "drive_id": "1fYIAsjxq4FQFP6v_faiZu5N7xra9mlWE"
+  },
+  {
+    "project_id": "installation",
+    "order": "7",
+    "drive_id": "1hpMDppbSBj-g0vKkQon_LrhJjlIr2R6D"
+  },
+  {
+    "project_id": "installation",
+    "order": "8",
+    "drive_id": "1dhi8c3Vwj3b2jGcSvPwf7sSCQeIHlKVn"
+  },
+  {
+    "project_id": "installation",
+    "order": "9",
+    "drive_id": "1xWGGrlxRpk1efUoi4q449uqx2avutT--"
+  },
+  {
+    "project_id": "installation",
+    "order": "10",
+    "drive_id": "1VDCYqVIUh0tGLL_mcRbJgq0vRf454P5t"
+  }
+];
+
+const CMS_ABOUT = [
+  {
+    "section_id": "tagline",
+    "glyph": "",
+    "body": "n!l\u3068\u3044\u3046\u540d\u524d\u306b\u3001\u300c\u5834\u6240\u306e\u8a18\u61b6\u3084\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u306e\u60f3\u3044\u306b\u8033\u3092\u50be\u3051\u3001\u305d\u3053\u306b\u6f5c\u3080\u3042\u3089\u3086\u308b\u53ef\u80fd\u6027\u3092\u639b\u3051\u5408\u308f\u305b\u308b\u3053\u3068\u3067\u3001\u307e\u3060\u898b\u306c\u65b0\u3057\u3044\u4fa1\u5024\u3092\u7a7a\u9593\u306b\u7acb\u3061\u4e0a\u3052\u308b\u300d\u3068\u3044\u3046\u610f\u5473\u3092\u8fbc\u3081\u307e\u3057\u305f\u3002"
+  },
+  {
+    "section_id": "n",
+    "glyph": "n",
+    "body": "\u3069\u3093\u306a\u5834\u6240\u306b\u3082\u3001\u307e\u3060\u8ab0\u3082\u89e3\u3044\u3066\u3044\u306a\u3044\u554f\u3044\u304c\u6f5c\u3093\u3067\u3044\u307e\u3059\u3002\n\u571f\u5730\u306e\u8a18\u61b6\u3002\u65bd\u4e3b\u306e\u60f3\u3044\u3002\u8a00\u8449\u306b\u306a\u308b\u524d\u306e\u76f4\u611f\u3002\n\u305d\u308c\u304c\u5168\u90e8\u3001n \u3067\u3059\u3002\n\u79c1\u305f\u3061\u306e\u8a2d\u8a08\u306f\u3001\u305d\u306e\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u3060\u3051\u306e n \u3092\u898b\u3064\u3051\u308b\u3053\u3068\u304b\u3089\u59cb\u307e\u308a\u307e\u3059\u3002"
+  },
+  {
+    "section_id": "exclamation",
+    "glyph": "!",
+    "body": "\u300c!\u300d\u306f\u968e\u4e57\u3092\u8868\u3057\u3066\u3044\u307e\u3059\u30021 \u00d7 2 \u00d7 3 \u00d7\u2026\u2026 \u639b\u3051\u5408\u308f\u305b\u308b\u307b\u3069\u3001\u7b54\u3048\u306f\u7206\u767a\u7684\u306b\u5897\u3048\u3066\u3044\u304d\u307e\u3059\u3002\n\n\u6280\u8853\u3068\u611f\u6027\u3001\u7a7a\u9593\u3068\u4eba\u3001\u6587\u8108\u3068\u904a\u3073\u5fc3\u2026\u2026 n \u3092\u639b\u3051\u5408\u308f\u305b\u3001\u4e88\u60f3\u306e\u3072\u3068\u3064\u4e0a\u3092\u884c\u304f\u300c!\u300d\u3092\u3064\u304f\u308b\u3002\n\u305d\u308c\u304c\u79c1\u305f\u3061\u306e\u4ed5\u4e8b\u3067\u3059\u3002"
+  },
+  {
+    "section_id": "l",
+    "glyph": "l",
+    "body": "\u4eee\u8aac\u3092\u7acb\u3066\u308b\u3002\u8a66\u3059\u3002\u307e\u305f\u554f\u3044\u76f4\u3059\u3002\n\u6b63\u89e3\u3089\u3057\u304d\u3082\u306e\u306b\u3001\u5b89\u6613\u306b\u306f\u7740\u5730\u3057\u307e\u305b\u3093\u3002\n\u7d0d\u5f97\u3059\u308b\u89e3\u304c\u51fa\u308b\u307e\u3067\u3001\u4f55\u5ea6\u3067\u3082\u716e\u8a70\u3081\u308b\u30e9\u30dc\u3002"
+  },
+  {
+    "section_id": "final",
+    "glyph": "n!l",
+    "body": "\u300cnil\u300d\u2014\u2014\u30e9\u30c6\u30f3\u8a9e\u3067\u30bc\u30ed\u3092\u610f\u5473\u3057\u307e\u3059\u3002\n\u524d\u4f8b\u30bc\u30ed\u3002\u5148\u5165\u89b3\u30bc\u30ed\u3002\n\u6bce\u56de\u30bc\u30ed\u304b\u3089\u554f\u3044\u76f4\u3057\u3001\u300c\uff01\u300d\u3092\u6c42\u3081\u3066\u65b0\u3057\u3044\u4fa1\u5024\u3092\n\u7d44\u307f\u4e0a\u3052\u308b\u3053\u3068\u3092\u76ee\u6307\u3059\u30c7\u30b6\u30a4\u30f3\u30b3\u30ec\u30af\u30c6\u30a3\u30d6\u3067\u3059\u3002"
+  }
+];
+/*==DATA_END==*/
+
+
+/* ── Works リスト描画 ── */
+function renderWorksList(works) {
+  const container = document.getElementById('works-list-container');
+  container.innerHTML = works.map(w => {
+    const num = String(Math.round(Number(w.num) || 0)).padStart(2, '0');
+    const tagHtml = esc(w.card_subtitle).replace(/\n/g, '<br>');
+    return `<div class="project-row" onclick="showPage('${esc(w.id)}')">
+      <div class="card-label">
+        <span class="card-num">${num}</span>
+        <span class="card-title-label">${esc(w.name)}</span>
+        <span class="card-concept-tag">${tagHtml}</span>
+      </div>
+      <div class="card-img-wrap">
+        <img src="${IMG(w.card_img, 'w1200')}" alt="${esc(w.name)}" loading="lazy">
+      </div>
+      <div class="card-right"><span class="card-arrow">→</span></div>
+    </div>`;
+  }).join('');
+  container.querySelectorAll('.card-img-wrap img').forEach(img => {
+    const done = () => { if (img.naturalWidth) img.classList.add('loaded'); };
+    if (img.complete) done(); else img.addEventListener('load', done);
+  });
+}
+
+/* ── プロジェクト詳細ページ描画 ── */
+function renderProjectPages(works, photosMap) {
+  document.querySelectorAll('.js-project-page').forEach(el => el.remove());
+  const insertBefore = document.getElementById('page-about');
+  works.forEach(w => {
+    const photos = photosMap[w.id] || [];
+    const paras = w.detail_body.split(/\n\n+/).filter(Boolean);
+    const bodyHtml = paras.map(p => `<p>${esc(p).replace(/\n/g, '<br>')}</p>`).join('');
+    const tagHtml = esc(w.detail_tagline).replace(/\n/g, '<br>');
+    const photosHtml = photos.map(id =>
+      `<img class="stack-photo" src="${IMG(id, 'w1600')}" data-full="${IMG(id, 'w1600')}" alt="" loading="lazy">`
+    ).join('');
+    const div = document.createElement('div');
+    div.id = `page-${w.id}`;
+    div.className = 'page js-project-page';
+    div.innerHTML = `<div class="project-wrap">
+      <div class="project-left">
+        <button class="back-btn" onclick="showPage('works')">Works</button>
+        <p class="project-detail-title">${esc(w.name)}</p>
+        <p class="concept-tagline">${tagHtml}</p>
+        <div class="concept-body">${bodyHtml}</div>
+      </div>
+      <div class="project-right">
+        <div class="photo-stack">${photosHtml}</div>
+      </div>
+    </div>`;
+    document.body.insertBefore(div, insertBefore);
+  });
+}
+
+/* ── About ページ描画 ── */
+function renderAbout(rows) {
+  const inner = document.getElementById('about-inner');
+  const get = id => rows.find(r => r.section_id === id) || {};
+  const taglineRow = get('tagline');
+  const tagline = taglineRow.body || taglineRow.glyph || '';
+  const nRow = get('n'), exRow = get('exclamation'), lRow = get('l'), finalRow = get('final');
+  function makeSection(glyphChar, titleHtml, body) {
+    const paras = body.split(/\n\n+/).filter(Boolean);
+    const bodyHtml = paras.map(p => `<p>${esc(p).replace(/\n/g, '<br>')}</p>`).join('');
+    return `<div class="about-section fade-section">
+      <div class="about-glyph">${glyphChar}</div>
+      <h2 class="about-section-title">${titleHtml}</h2>
+      ${bodyHtml}
+    </div>`;
+  }
+  const finalBody = finalRow.body || '';
+  const finalParas = finalBody.split(/\n\n+/).filter(Boolean);
+  const finalBodyHtml = finalParas.map(p => `<p>${esc(p).replace(/\n/g, '<br>')}</p>`).join('');
+  inner.innerHTML = `
+    <div class="about-logo-wrap">
+      <img src="${IMG('1lmcL3Ro0FB4TuoyzZA8yqX882bubm0sy', 'w1080')}" alt="n!l">
+    </div>
+    <p class="about-subtitle">n!l（ニル）</p>
+    <p class="about-tagline fade-section">${esc(tagline).replace(/\n/g, '<br>')}</p>
+    ${nRow.section_id  ? makeSection('n', 'n &nbsp;-未知数-', nRow.body || '') : ''}
+    ${exRow.section_id ? makeSection('!', '! &nbsp;-可能性をかけ合わせること-', exRow.body || '') : ''}
+    ${lRow.section_id  ? makeSection('l', 'l &nbsp;-可能性を煮詰める場所-', lRow.body || '') : ''}
+    <hr class="about-divider fade-section">
+    <div class="about-section about-final fade-section">
+      <div class="about-glyph">${esc(finalRow.glyph || 'n!l')}</div>
+      <h2 class="about-section-title">並べて、n!l。</h2>
+      ${finalBodyHtml}
+    </div>
+  `;
+}
+
+/* ── スプラッシュ（最優先 — initより前に実行） ── */
+(function () {
+  const splash = document.getElementById('splash');
+  const sl = document.getElementById('splash-logo');
+  const nav = document.getElementById('main-nav');
+  let exited = false;
+  function exitSplash() {
+    if (exited) return; exited = true;
+    splash.classList.add('exit'); nav.classList.add('visible');
+    setTimeout(function() { splash.style.display = 'none'; }, 1150);
+  }
+  function revealLogo() {
+    sl.style.transition = 'opacity 0.65s ease, transform 0.8s cubic-bezier(0.16,1,0.3,1)';
+    sl.style.opacity = '1'; sl.style.transform = 'scale(1)';
+    setTimeout(exitSplash, 1500);
+  }
+  if (sl.complete && sl.naturalWidth > 0) { revealLogo(); }
+  else {
+    sl.addEventListener('load', revealLogo);
+    sl.addEventListener('error', function() { setTimeout(exitSplash, 200); });
+    setTimeout(exitSplash, 4000);
+  }
+})();
+
+/* ── 初期化（同期・即時実行） ── */
+let PROJECT_PAGES = [];
+try {
+  const sortedPhotos = CMS_PHOTOS.slice().sort((a, b) => Number(a.order) - Number(b.order));
+  const photosMap = {};
+  sortedPhotos.forEach(p => {
+    if (!photosMap[p.project_id]) photosMap[p.project_id] = [];
+    photosMap[p.project_id].push(p.drive_id);
+  });
+  PROJECT_PAGES = CMS_WORKS.map(w => w.id);
+  renderWorksList(CMS_WORKS);
+  renderProjectPages(CMS_WORKS, photosMap);
+  renderAbout(CMS_ABOUT);
+} catch(e) {
+  console.error('n!l init error:', e);
+}
+
+/* ── About フェードイン ── */
 const fadeObserver = new IntersectionObserver((entries) => {
   entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      fadeObserver.unobserve(e.target);
-    }
+    if (e.isIntersecting) { e.target.classList.add('visible'); fadeObserver.unobserve(e.target); }
   });
 }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-
 function observeAboutFades() {
   document.querySelectorAll('#page-about .fade-section').forEach((el, i) => {
     el.classList.remove('visible');
@@ -759,6 +803,7 @@ function observeAboutFades() {
   });
 }
 
+/* ── ページ遷移 ── */
 function showPage(name) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const page = document.getElementById('page-' + name);
@@ -772,11 +817,10 @@ function showPage(name) {
   window.scrollTo(0, 0);
   const left = page && page.querySelector('.project-left');
   if (left) left.scrollTop = 0;
-  if (name === 'about') {
-    setTimeout(observeAboutFades, 80);
-  }
+  if (name === 'about') setTimeout(observeAboutFades, 80);
 }
 
+/* ── モバイルメニュー ── */
 function closeMobileMenu() {
   document.getElementById('nav-hamburger').classList.remove('open');
   document.getElementById('nav-mobile-menu').classList.remove('open');
@@ -786,98 +830,49 @@ document.getElementById('nav-hamburger').addEventListener('click', function () {
   document.getElementById('nav-mobile-menu').classList.toggle('open');
 });
 
-/* ── splash ── */
-(function () {
-  const splash = document.getElementById('splash');
-  const sl = document.getElementById('splash-logo');
-  const nav = document.getElementById('main-nav');
-  let exited = false;
-  function exitSplash() {
-    if (exited) return; exited = true;
-    splash.classList.add('exit'); nav.classList.add('visible');
-    setTimeout(() => { splash.style.display = 'none'; }, 1150);
-  }
-  function revealLogo() {
-    sl.style.transition = 'opacity 0.65s ease, transform 0.8s cubic-bezier(0.16,1,0.3,1)';
-    sl.style.opacity = '1'; sl.style.transform = 'scale(1)';
-    setTimeout(exitSplash, 1500);
-  }
-  if (sl.complete && sl.naturalWidth > 0) revealLogo();
-  else { sl.addEventListener('load', revealLogo); sl.addEventListener('error', () => setTimeout(exitSplash, 200)); setTimeout(exitSplash, 5000); }
-})();
+/* スプラッシュは先頭で初期化済 */
 
-/* ── image fade-in — works cards ── */
-document.querySelectorAll('.card-img-wrap img').forEach(img => {
-  const done = () => { if (img.naturalWidth) img.classList.add('loaded'); };
-  if (img.complete) done(); else img.addEventListener('load', done);
+/* ── ライトボックス ── */
+const lb = document.getElementById('lightbox');
+const lbImg = document.getElementById('lb-img');
+document.addEventListener('click', e => {
+  if (e.target.classList.contains('stack-photo')) {
+    lbImg.src = e.target.dataset.full || e.target.src;
+    lb.classList.add('open');
+  }
 });
+document.getElementById('lb-close').addEventListener('click', () => lb.classList.remove('open'));
+lb.addEventListener('click', e => { if (e.target === lb) lb.classList.remove('open'); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
 
-/* ── photo stack fade-in ── */
-(function () {
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('loaded'); io.unobserve(e.target); } });
-  }, { rootMargin: '0px 0px 120px 0px', threshold: 0.05 });
-  document.querySelectorAll('.stack-photo').forEach(img => {
-    if (img.complete && img.naturalWidth) { img.classList.add('loaded'); }
-    else { io.observe(img); img.addEventListener('load', () => img.classList.add('loaded')); }
-  });
-})();
-
-/* ── infinite scroll ── */
-(function () {
-  const worksPage = document.getElementById('page-works');
-  const worksList = document.getElementById('works-list');
-  if (!worksList) return;
-  const firstRow = worksList.querySelector('.project-row');
-  if (!firstRow) return;
-  const clone = firstRow.cloneNode(true);
-  clone.classList.add('is-clone');
-  worksList.appendChild(clone);
-  clone.querySelectorAll('img').forEach(img => {
-    if (img.complete && img.naturalWidth) img.classList.add('loaded');
-    else img.addEventListener('load', () => img.classList.add('loaded'));
-  });
-  window.addEventListener('scroll', () => {
-    if (!worksPage.classList.contains('active')) return;
-    const dist = clone.getBoundingClientRect().top - firstRow.getBoundingClientRect().top;
-    if (dist > 0 && window.scrollY >= dist) {
-      window.scrollTo({ top: window.scrollY - dist, behavior: 'instant' });
-    }
-  }, { passive: true });
-})();
-
-/* ── contact form ── */
+/* ── お問い合わせフォーム ── */
 (function () {
   const form = document.getElementById('contact-form');
   if (!form) return;
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    const name = form.querySelector('#cf-name').value.trim();
-    const email = form.querySelector('#cf-email').value.trim();
-    const type = form.querySelector('#cf-type').value;
-    const budget = form.querySelector('#cf-budget').value;
+    const name    = form.querySelector('#cf-name').value.trim();
+    const email   = form.querySelector('#cf-email').value.trim();
+    const type    = form.querySelector('#cf-type').value;
+    const budget  = form.querySelector('#cf-budget').value;
     const message = form.querySelector('#cf-message').value.trim();
     let valid = true;
     if (!name)    { form.querySelector('#cf-name').style.borderBottomColor    = '#c0392b'; valid = false; }
     if (!email)   { form.querySelector('#cf-email').style.borderBottomColor   = '#c0392b'; valid = false; }
     if (!message) { form.querySelector('#cf-message').style.borderBottomColor = '#c0392b'; valid = false; }
     if (!valid) return;
-    const body = [`お名前：${name}`,`メールアドレス：${email}`,type?`種別：${type}`:'',budget?`ご予算：${budget}`:'','','メッセージ：',message].filter(Boolean).join('\n');
+    const body = [
+      `お名前：${name}`, `メールアドレス：${email}`,
+      type ? `種別：${type}` : '', budget ? `ご予算：${budget}` : '',
+      '', 'メッセージ：', message
+    ].filter(Boolean).join('\n');
     window.location.href = `mailto:info@nil-arch.com?subject=${encodeURIComponent('n!l ご相談・ご依頼')}&body=${encodeURIComponent(body)}`;
     document.getElementById('form-success').classList.add('visible');
   });
-  form.querySelectorAll('.form-input').forEach(el => { el.addEventListener('input', () => { el.style.borderBottomColor = ''; }); });
+  form.querySelectorAll('.form-input').forEach(el => {
+    el.addEventListener('input', () => { el.style.borderBottomColor = ''; });
+  });
 })();
-
-/* ── lightbox ── */
-const lb = document.getElementById('lightbox');
-const lbImg = document.getElementById('lb-img');
-document.querySelectorAll('.stack-photo').forEach(img => {
-  img.addEventListener('click', () => { lbImg.src = img.dataset.full || img.src; lb.classList.add('open'); });
-});
-document.getElementById('lb-close').addEventListener('click', () => lb.classList.remove('open'));
-lb.addEventListener('click', e => { if (e.target === lb) lb.classList.remove('open'); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
 </script>
 </body>
 </html>
